@@ -1,4 +1,3 @@
-import 'package:duck_duck_shop/data.dart';
 import 'package:flutter/foundation.dart';
 
 abstract class AuthRepository {
@@ -10,8 +9,4 @@ abstract class AuthRepository {
   Stream<String> get onAuthStateChangedInternal;
 
   Future<void> signOut();
-
-  Future<void> signUp(AccountData account);
-
-  Stream<AccountData> getAccount(String uuid);
 }
