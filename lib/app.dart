@@ -11,12 +11,20 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      //
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       onGenerateRoute: (RouteSettings settings) => _PageRoute(
-        builder: (_) => SplashPage(),
+        builder: (_) => SplashPage(isColdStart: true),
         settings: settings.copyWith(name: AppRoutes.start),
       ),
     );
